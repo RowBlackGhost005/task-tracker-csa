@@ -5,7 +5,9 @@ export const TaskOps = {
     ADD: "ADD",
     UPDATE: "UPDATE",
     DELETE: "DELETE",
-    TOGGLE: "TOGGLE"
+    TOGGLE: "TOGGLE",
+    LOAD: "LOAD",
+    REORDER: "REORDER"
 }
 
 export const TaskContext = createContext();
@@ -22,7 +24,9 @@ const taskReducer = (state, action) => {
             return state.map(task =>
                 task.id === action.payload ? { ...task, completed: !task.completed } : task
             );
-        case 'LOAD_TASKS':
+        case TaskOps.LOAD:
+            return action.payload;
+        case TaskOps.REORDER:
             return action.payload;
         default:
             return state;
@@ -52,7 +56,7 @@ export const TaskProvider = ({ children }) => {
     useEffect(() => {
         const stored = localStorage.getItem('tasks');
         if (stored) {
-        taskDispatch({ type: 'LOAD_TASKS', payload: JSON.parse(stored) });
+        taskDispatch({ type: TaskOps.LOAD, payload: JSON.parse(stored) });
         }
     }, []);
 
