@@ -2,6 +2,8 @@
 
 Small web app build with React that works as a To-Do list, this app has persistance storage thanks to Local Storage.
 
+VIDEO DEMO: https://youtu.be/33d-ZaZ7Fxg
+
 # Features
 1. Task Creation.
 2. Drag-n-Drop organization.
