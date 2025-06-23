@@ -43,7 +43,7 @@
   color: #555;
 }
 
-.completed .task-title {
+.completed .taskTitle {
   text-decoration: line-through;
   color: #888;
 }

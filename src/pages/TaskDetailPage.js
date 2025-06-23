@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { TaskContext , TaskOps } from '../context/TaskContext';
+
+import ConfirmDialog from '../components/ConfirmDialog';
 import styles from './TaskDetailPage.module.css';
 
 export default function TaskDetailsPage() {
@@ -8,6 +10,23 @@ export default function TaskDetailsPage() {
   const { id } = useParams();
   const { tasks, taskDispatch } = useContext(TaskContext);
   const navigate = useNavigate();
+
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handleDelete = () => {
+    setShowConfirm(true);
+  };
+
+  const confirmDelete = () => {
+    taskDispatch({ type: TaskOps.DELETE, payload: task.id });
+    setShowConfirm(false);
+    navigate('/');
+      
+  };
+
+  const cancelDelete = () => {
+    setShowConfirm(false);
+  };
 
   //Converts the ID of the params into a Number and fetch its details from context.
   const numericId = parseInt(id, 10);
@@ -28,14 +47,6 @@ export default function TaskDetailsPage() {
   const handleUpdate = () => {
     taskDispatch({ type: TaskOps.UPDATE, payload: { ...task, ...formData } });
     setEditMode(false);
-  };
-
-  const handleDelete = () => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this task?');
-    if (confirmDelete) {
-      taskDispatch({ type: TaskOps.DELETE, payload: task.id });
-      navigate('/');
-    }
   };
 
   if (!task) {
@@ -82,6 +93,14 @@ export default function TaskDetailsPage() {
           </>
         )}
       </div>
+
+      {showConfirm && (
+        <ConfirmDialog
+        message="Are you sure you want to delete this task?"
+        onConfirm={confirmDelete}
+        onCancel={cancelDelete}/>
+      )}
+
     </div>
   );
 }
