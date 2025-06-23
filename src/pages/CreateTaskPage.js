@@ -30,10 +30,10 @@ const CreateTaskPage = ({ }) => {
 
         const newTask = {
           id: generateTaskId(),
-          title,
-          dueDate,
-          description,
-          status: 'Pending',
+          title: title,
+          dueDate: dueDate,
+          description: description,
+          completed: false
         };
         
         navigate('/')

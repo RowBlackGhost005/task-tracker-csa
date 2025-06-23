@@ -20,6 +20,10 @@
 .task-toggle {
   margin-top: 4px;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
+  max-width: 32px;
+  max-height: 32px;
 }
 
 .task-content {

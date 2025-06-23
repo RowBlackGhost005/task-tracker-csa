@@ -16,7 +16,7 @@ export default function TaskItem({ task }) {
   return (
     <div className={`task-card ${task.completed ? 'completed' : ''}`}>
       <input
-        type="radio"
+        type="checkbox"
         checked={task.completed}
         onChange={handleToggle}
         className="task-toggle"/>
