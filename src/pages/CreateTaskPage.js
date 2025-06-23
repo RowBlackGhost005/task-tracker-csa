@@ -6,7 +6,7 @@ import './CreateTaskPage.css';
 
 import { TaskContext , TaskOps } from '../context/TaskContext';
 
-const CreateTaskPage = ({ }) => {
+const CreateTaskPage = () => {
 
     const { taskDispatch , generateTaskId } = useContext(TaskContext);
 
@@ -16,7 +16,7 @@ const CreateTaskPage = ({ }) => {
 
     const navigate = useNavigate();
 
-    //Ensures user can select 'today' as due date.
+    //Ensures only Today onwards can be selected
     const today = new Date();
     today.setDate(today.getDate() - 1);
 

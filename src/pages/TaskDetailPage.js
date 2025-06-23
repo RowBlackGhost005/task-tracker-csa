@@ -4,10 +4,12 @@ import { TaskContext , TaskOps } from '../context/TaskContext';
 import './TaskDetailPage.css';
 
 export default function TaskDetailsPage() {
+  //Takes the ID from the params of the url.
   const { id } = useParams();
   const { tasks, taskDispatch } = useContext(TaskContext);
   const navigate = useNavigate();
 
+  //Converts the ID of the params into a Number and fetch its details from context.
   const numericId = parseInt(id, 10);
   const task = tasks.find(t => t.id === numericId);
 

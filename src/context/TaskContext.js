@@ -61,6 +61,7 @@ export const TaskProvider = ({ children }) => {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }, [tasks]);
 
+    // Passes the current ID to be used and updates it.
     const generateTaskId = () => {
         const newId = taskId + 1;
         setTaskId(newId);
