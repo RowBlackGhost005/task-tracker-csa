@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { TaskContext , TaskOps } from '../context/TaskContext';
 import TaskItem from '../components/TaskItem';
-import './TaskListPage.css';
+import styles from './TaskListPage.module.css'
 
 import {
   DragDropContext,
@@ -29,16 +29,18 @@ export default function TaskListPage() {
         taskDispatch({type: TaskOps.REORDER , payload: reordered});
     }
 
-    return (
-        <div className="task-list-page">
-            <button className="create-task-button" onClick={() => navigate('/create')}> Create a Task </button>
 
+    return (
+        <div className={styles.taskListPage}>
+            <button className={styles.createTaskButton} onClick={() => navigate('/create')}> Create a Task </button>
+
+            {tasks.length === 0 && <p className={styles.noTasks}>There are no task left.</p>}
 
             <DragDropContext onDragEnd={handleDragEnd}>
                 <Droppable droppableId='task-list'>
                     {(provided) => (
                         <div
-                            className='task-list'
+                            className={styles.taskList}
                             {...provided.droppableProps}
                             ref={provided.innerRef}>
                                 {tasks.map((task, index) => (
@@ -48,7 +50,7 @@ export default function TaskListPage() {
                                         index={index}>
                                             {(provided) => (
                                                 <div
-                                                className='task-dnd-container'
+                                                className={styles.tasksDndContainer}
                                                 ref={provided.innerRef}
                                                 {...provided.draggableProps}
                                                 {...provided.dragHandleProps}>

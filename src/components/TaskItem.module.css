@@ -1,4 +1,4 @@
-.task-card {
+.taskCard {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -12,11 +12,11 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.task-card:hover {
+.taskCard:hover {
   background: #F5F5F5;
 }
 
-.task-toggle {
+.taskToggle {
   margin-top: 4px;
   cursor: pointer;
   width: 24px;
@@ -25,20 +25,20 @@
   max-height: 32px;
 }
 
-.task-content {
+.taskContent {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.task-title {
+.taskTitle {
   font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   word-wrap: break-word;
 }
 
-.task-date {
+.taskDate {
   font-size: 0.9rem;
   color: #555;
 }
@@ -48,13 +48,13 @@
   color: #888;
 }
 
-.task-link {
+.taskLink {
   text-decoration: none;
   color: inherit;
   flex-grow: 1;
 }
 
-.delete-btn {
+.deleteBtn {
   background: transparent;
   border: none;
   color: #888;
@@ -65,11 +65,11 @@
   transition: color 0.2s ease;
 }
 
-.delete-btn:hover {
+.deleteBtn:hover {
   color: #d12f2f;
 }
 
-.delete-icon {
+.deleteIcon {
   max-width: 2rem;
   height: auto;
   object-fit: contain;
@@ -79,7 +79,7 @@
   margin-bottom: auto;
 }
 
-.delete-btn:hover .delete-icon {
+.deleteBtn:hover .delete-icon {
   opacity: 1;
   transform: scale(1.1);
 }

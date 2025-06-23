@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 import { TaskContext , TaskOps } from '../context/TaskContext';
-import './TaskItem.css';
+import styles from './TaskItem.module.css'
 
 export default function TaskItem({ task }) {
   const { taskDispatch } = useContext(TaskContext);
@@ -18,22 +18,22 @@ export default function TaskItem({ task }) {
   }
 
   return (
-    <div className={`task-card ${task.completed ? 'completed' : ''}`}>
+    <div className={`${styles.taskCard} ${task.completed ? styles.completed : ''}`}>
       <input
         type="checkbox"
         checked={task.completed}
         onChange={handleToggle}
-        className="task-toggle"/>
+        className={styles.taskToggle}/>
         
-        <Link to={`/task/${task.id}`} className="task-link">
-            <div className="task-content">
-                <div className="task-title">{task.title}</div>
-                <div className="task-date">Due: {task.dueDate}</div>
+        <Link to={`/task/${task.id}`} className={styles.taskLink}>
+            <div className={styles.taskContent}>
+                <div className={styles.taskTitle}>{task.title}</div>
+                <div className={styles.taskDate}>Due: {task.dueDate}</div>
             </div>
         </Link>
 
-      <button className="delete-btn" onClick={handleDelete}>
-        <img src="/images/delete.png" alt="Delete" className="delete-icon" />
+      <button className={styles.deleteBtn} onClick={handleDelete}>
+        <img src="/images/delete.png" alt="Delete" className={styles.deleteIcon} />
       </button>
     </div>
     

@@ -1,4 +1,4 @@
-.task-list-page {
+.taskListPage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +7,7 @@
   min-height: 100vh;
 }
 
-.create-task-button {
+.createTaskButton {
   background-color: #0078d4;
   color: white;
   border: none;
@@ -19,11 +19,11 @@
   transition: background 0.2s ease-in-out;
 }
 
-.create-task-button:hover {
+.createTaskButton:hover {
   background-color: #005fa3;
 }
 
-.task-list {
+.taskList {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,13 +31,13 @@
   max-width: 1200px;
 }
 
-.task-dnd-container {
+.tasksDndContainer {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.no-tasks {
+.noTasks {
   font-size: 1.1rem;
   color: #777;
   font-style: italic;

@@ -1,25 +1,25 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.css';
+import styles from './Header.module.css'
 
 export default function Header() {
   return (
-    <header className="app-header">
-      <div className="header-top">
-        <div className="app-icon"><img src='/images/check.png' className='header-icon' alt='Check Icon'></img></div>
+    <header className={styles.appHeader}>
+      <div className={styles.headerTop}>
+        <div className={styles.appIcon}><img src='/images/check.png' className={styles.headerIcon} alt='Check Icon'></img></div>
 
-        <h1 className="app-title">TO-DO Tracker</h1>
+        <h1 className={styles.appTitle}>TO-DO Tracker</h1>
 
-        <div className="settings-placeholder">
+        <div className={styles.settingsPlaceholder}>
           {/* Settings or Profile Placeholder*/}
         </div>
       </div>
 
-      <nav className="nav-bar">
-        <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+      <nav className={styles.navBar}>
+        <NavLink to="/" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>
           Tasks
         </NavLink>
-        <NavLink to="/create" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+        <NavLink to="/create" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>
           Create Task
         </NavLink>
       </nav>

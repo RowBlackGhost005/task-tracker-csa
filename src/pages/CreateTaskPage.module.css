@@ -1,4 +1,4 @@
-.task-form {
+.taskForm {
   max-width: 500px;
   margin: 20px auto;
   background: #f8f9fa;
@@ -8,20 +8,20 @@
   font-family: Arial, sans-serif;
 }
 
-.task-form h2 {
+.taskForm h2 {
   margin-bottom: 15px;
   color: #343a40;
 }
 
-.task-form label {
+.taskForm label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
-.task-form input[type="text"],
-.task-form input[type="date"],
-.task-form textarea {
+.taskForm input[type="text"],
+.taskForm input[type="date"],
+.taskForm textarea {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -32,12 +32,12 @@
   font-size: 14px;
 }
 
-.task-form textarea {
+.taskForm textarea {
   resize: vertical;
   min-height: 80px;
 }
 
-.task-form button {
+.taskForm button {
   background-color: #007bff;
   color: white;
   padding: 10px 15px;
@@ -46,6 +46,6 @@
   cursor: pointer;
 }
 
-.task-form button:hover {
+.taskForm button:hover {
   background-color: #0056b3;
 }

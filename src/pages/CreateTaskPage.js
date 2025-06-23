@@ -2,7 +2,7 @@ import React, { useState , useContext } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import './CreateTaskPage.css';
+import styles from './CreateTaskPage.module.css'
 
 import { TaskContext , TaskOps } from '../context/TaskContext';
 
@@ -45,7 +45,7 @@ const CreateTaskPage = () => {
     };
 
   return (
-    <form className="task-form" onSubmit={handleSubmit}>
+    <form className={styles.taskForm} onSubmit={handleSubmit}>
       <h2>Add New Task</h2>
       <label>
         Task Name:

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { TaskContext , TaskOps } from '../context/TaskContext';
-import './TaskDetailPage.css';
+import styles from './TaskDetailPage.module.css';
 
 export default function TaskDetailsPage() {
   //Takes the ID from the params of the url.
@@ -30,15 +30,23 @@ export default function TaskDetailsPage() {
     setEditMode(false);
   };
 
+  const handleDelete = () => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this task?');
+    if (confirmDelete) {
+      taskDispatch({ type: TaskOps.DELETE, payload: task.id });
+      navigate('/');
+    }
+  };
+
   if (!task) {
-    return <p className="not-found">An error ocurred and the task details cannot be found.</p>;
+    return <p className={styles.notFound}>An error ocurred and the task details cannot be found.</p>;
   }
 
   return (
-    <div className="details-container">
-      <button className="back-btn" onClick={() => navigate('/')}>← Back to List</button>
+    <div className={styles.detailsContainer}>
+      <button className={styles.backBtn} onClick={() => navigate('/')}>← Back to List</button>
 
-      <div className="details-card">
+      <div className={styles.detailsCard}>
         {editMode ? (
           <>
             <input
@@ -46,30 +54,31 @@ export default function TaskDetailsPage() {
               name="title"
               value={formData.title}
               onChange={handleChange}
-              className="edit-input"
+              className={styles.editInput}
             />
             <input
               type="date"
               name="dueDate"
               value={formData.dueDate}
               onChange={handleChange}
-              className="edit-input"
+              className={styles.editInput}
             />
             <textarea
               name="description"
               rows="4"
               value={formData.description}
               onChange={handleChange}
-              className="edit-textarea"
+              className={styles.editTextarea}
             />
-            <button onClick={handleUpdate} className="save-btn">Save</button>
+            <button onClick={handleUpdate} className={styles.saveBtn}>Save</button>
           </>
         ) : (
           <>
             <h2>{task.title}</h2>
             <p><strong>Due:</strong> {task.dueDate}</p>
             <p><strong>Description:</strong> {task.description || 'No description added.'}</p>
-            <button onClick={() => setEditMode(true)} className="edit-btn">Edit</button>
+            <button onClick={() => setEditMode(true)} className={styles.editBtn}>Edit</button>
+            <button onClick={handleDelete} className={styles.deleteBtn}>Delete</button>
           </>
         )}
       </div>
