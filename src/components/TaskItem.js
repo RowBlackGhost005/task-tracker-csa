@@ -13,6 +13,10 @@ export default function TaskItem({ task }) {
     taskDispatch({ type: TaskOps.TOGGLE, payload: task.id });
   };
 
+  const handleDelete = () => {
+    taskDispatch({ type: TaskOps.DELETE , payload: task.id});
+  }
+
   return (
     <div className={`task-card ${task.completed ? 'completed' : ''}`}>
       <input
@@ -27,6 +31,10 @@ export default function TaskItem({ task }) {
                 <div className="task-date">Due: {task.dueDate}</div>
             </div>
         </Link>
+
+      <button className="delete-btn" onClick={handleDelete}>
+        <img src="/images/delete.png" alt="Delete" className="delete-icon" />
+      </button>
     </div>
     
   );
