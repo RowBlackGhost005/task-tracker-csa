@@ -79,7 +79,7 @@
   margin-bottom: auto;
 }
 
-.deleteBtn:hover .delete-icon {
+.deleteBtn:hover .deleteIcon {
   opacity: 1;
   transform: scale(1.1);
 }
