@@ -2,11 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css'
 
+import logo from '../images/check.png';
+
 export default function Header() {
   return (
     <header className={styles.appHeader}>
       <div className={styles.headerTop}>
-        <div className={styles.appIcon}><img src='/images/check.png' className={styles.headerIcon} alt='Check Icon'></img></div>
+        <div className={styles.appIcon}><img src={logo} className={styles.headerIcon} alt='Check Icon'></img></div>
 
         <h1 className={styles.appTitle}>TO-DO Tracker</h1>
 

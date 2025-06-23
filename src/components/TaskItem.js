@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import ConfirmDialog from './ConfirmDialog';
 
+import deleteIcon from '../images/delete.png'
+
 import { TaskContext , TaskOps } from '../context/TaskContext';
 import styles from './TaskItem.module.css'
 
@@ -46,7 +48,7 @@ export default function TaskItem({ task }) {
         </Link>
 
       <button className={styles.deleteBtn} onClick={handleDelete}>
-        <img src="/images/delete.png" alt="Delete" className={styles.deleteIcon} />
+        <img src={deleteIcon} alt="Delete" className={styles.deleteIcon} />
       </button>
 
       {showConfirm && (
