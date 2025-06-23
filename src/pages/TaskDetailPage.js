@@ -60,22 +60,28 @@ export default function TaskDetailsPage() {
       <div className={styles.detailsCard}>
         {editMode ? (
           <>
+            <label htmlFor='title'>Title</label>
             <input
               type="text"
               name="title"
+              id='title'
               value={formData.title}
               onChange={handleChange}
               className={styles.editInput}
             />
+            <label htmlFor='dueDate'>Due Date</label>
             <input
               type="date"
               name="dueDate"
+              id='dueDate'
               value={formData.dueDate}
               onChange={handleChange}
               className={styles.editInput}
             />
+            <label htmlFor='description'>Description</label>
             <textarea
               name="description"
+              id='description'
               rows="4"
               value={formData.description}
               onChange={handleChange}
