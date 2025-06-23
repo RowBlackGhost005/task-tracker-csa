@@ -18,12 +18,12 @@ const CreateTaskPage = () => {
 
     //Ensures only Today onwards can be selected
     const today = new Date();
-    today.setDate(today.getDate() - 1);
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!title || !dueDate || !description) {
+        if (!title || !dueDate) {
           alert("Please fill in all fields.");
           return;
         }
