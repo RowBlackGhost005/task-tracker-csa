@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/task-tracker-csa/static/css/main.c74da923.css",
-    "main.js": "/task-tracker-csa/static/js/main.accede05.js",
+    "main.css": "/task-tracker-csa/static/css/main.faa9f4e7.css",
+    "main.js": "/task-tracker-csa/static/js/main.3b022d2d.js",
     "static/js/453.9dbb00f7.chunk.js": "/task-tracker-csa/static/js/453.9dbb00f7.chunk.js",
+    "static/media/check.png": "/task-tracker-csa/static/media/check.036a3a4bff3789109fb1.png",
     "index.html": "/task-tracker-csa/index.html",
-    "main.c74da923.css.map": "/task-tracker-csa/static/css/main.c74da923.css.map",
-    "main.accede05.js.map": "/task-tracker-csa/static/js/main.accede05.js.map",
+    "main.faa9f4e7.css.map": "/task-tracker-csa/static/css/main.faa9f4e7.css.map",
+    "main.3b022d2d.js.map": "/task-tracker-csa/static/js/main.3b022d2d.js.map",
     "453.9dbb00f7.chunk.js.map": "/task-tracker-csa/static/js/453.9dbb00f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c74da923.css",
-    "static/js/main.accede05.js"
+    "static/css/main.faa9f4e7.css",
+    "static/js/main.3b022d2d.js"
   ]
 }
