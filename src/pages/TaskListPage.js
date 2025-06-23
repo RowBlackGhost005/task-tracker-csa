@@ -48,6 +48,7 @@ export default function TaskListPage() {
                                         index={index}>
                                             {(provided) => (
                                                 <div
+                                                className='task-dnd-container'
                                                 ref={provided.innerRef}
                                                 {...provided.draggableProps}
                                                 {...provided.dragHandleProps}>
