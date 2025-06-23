@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext , useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -19,6 +19,8 @@ export default function TaskListPage() {
 
     const { tasks , taskDispatch } = useContext(TaskContext);
 
+    const [filter, setFilter] = useState('all'); // 'all' | 'pending' | 'done'
+
     const handleDragEnd = (result) => {
         if(!result.destination) return;
 
@@ -29,10 +31,26 @@ export default function TaskListPage() {
         taskDispatch({type: TaskOps.REORDER , payload: reordered});
     }
 
+    const filteredTasks = tasks.filter(task => {
+        if (filter === 'pending') return !task.completed;
+        if (filter === 'done') return task.completed;
+        return true;
+    });
+
 
     return (
         <div className={styles.taskListPage}>
             <button className={styles.createTaskButton} onClick={() => navigate('/create')}> Create a Task </button>
+
+            <label htmlFor="taskFilter" className={styles.filterLabel}> Filter: </label>
+
+            <select id="taskFilter" value={filter} onChange={(e) => setFilter(e.target.value)} className={styles.filterSelect}>
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending</option>
+                <option value="done">Done</option>
+            </select>
+
+
 
             {tasks.length === 0 && <p className={styles.noTasks}>There are no task left.</p>}
 
@@ -43,7 +61,7 @@ export default function TaskListPage() {
                             className={styles.taskList}
                             {...provided.droppableProps}
                             ref={provided.innerRef}>
-                                {tasks.map((task, index) => (
+                                {filteredTasks.map((task, index) => (
                                     <Draggable
                                         key={task.id}
                                         draggableId={task.id.toString()}

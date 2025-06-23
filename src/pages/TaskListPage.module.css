@@ -42,3 +42,18 @@
   color: #777;
   font-style: italic;
 }
+
+.filterLabel {
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.filterSelect {
+  padding: 0.4rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+  margin-bottom: 2rem;
+}
