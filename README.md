@@ -6,6 +6,7 @@ Small web app build with React that works as a To-Do list, this app has persista
 1. Task Creation.
 2. Drag-n-Drop organization.
 3. Task Details section.
+4. Filter task by Done, Pending or All.
 
 # Requirements
 
